@@ -1,9 +1,9 @@
 FROM python:3.11
 
 WORKDIR /talanakombat
-COPY requirementes.txt /talanakombat/requirementes.txt
+COPY requirements.txt /talanakombat/requirements.txt
 
-RUN pip install --no-cache-dir --upgrade -r /talanakombat/requirementes.txt
+RUN pip install --no-cache-dir --upgrade -r /talanakombat/requirements.txt
 
 COPY . /talanakombat/
 
