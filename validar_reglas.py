@@ -1,6 +1,5 @@
-import functools
-
-import movimientos,golpes
+import Archivos.movimientos as movimientos
+import Archivos.golpes as golpes
 import players
 
 

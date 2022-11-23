@@ -1,7 +1,8 @@
 import json
-import validar_reglas
 
 def get_pelea()->dict :
+
+    #carga archivo json
 
     try:
         data_json= {}

@@ -1,7 +1,14 @@
-import combinaciones,movimientos,golpes,narracion
+import Archivos.combinaciones as combinaciones
+import Archivos.movimientos as movimientos
+import Archivos.golpes as golpes
+import Archivos.narracion as narracion
 
 
 def get_narracion(player,narraciones,movimiento,contador,tamanio_combinacion)->str:
+
+    """funcion que recupera una narracion por movimiento y la de un orden segun su posicion para tratar de tener
+      una narracion lo mas logica posible """
+
     narracion_player:str = ""
 
     if contador == 0:
@@ -16,6 +23,12 @@ def get_narracion(player,narraciones,movimiento,contador,tamanio_combinacion)->s
 
 
 def get_secuencia_pelea(player)->dict:
+
+    """funcion que crea una secuencia de la pelea por cada jugador de manera individual 
+       identificar los movimientos, golpes y comandos especiales y les da una secuencia ordenada y logica 
+       segun los comandos introducidos en el json como resultado obtenemos un diccionario 
+       que va de manera ordenada que es lo que el jugador hace en su turno 
+       """
     
     movimientos_player = player.movimientos
     golpes_player = player.golpes
@@ -76,6 +89,10 @@ def get_secuencia_pelea(player)->dict:
 
 
 def simular_combate(p1,p2):
+
+    """Funcion que permite recrear el combate segun los comandos cargados en cada jugador hasta que uno 
+       de los dos jugadores llegue sus puntos de vida a cero , de igual form  
+       generar la narracion que nos permite dar una idea de lo que esta pasando"""
 
     secuencia_p1 = get_secuencia_pelea(p1)
     secuencia_p2 = get_secuencia_pelea(p2)

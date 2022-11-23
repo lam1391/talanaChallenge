@@ -11,6 +11,10 @@ player2:Player = None
 
 def inicializar()->True:
 
+    """Funcion de inicializacion del proceso el cual se encarga de traer la informacion de la pelea de un archivo json,
+    inicializa a los jugagores y carga la informacion de los json a los jugagores si la carga inicial es correcta se puede
+    continuar con el juego """
+
     partida = get_pelea()
     
     global player1
