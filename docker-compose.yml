@@ -1,5 +1,5 @@
 services:
-  talanakombat:
+  lam1391/talanakombat:
     build: 
       context: .
       dockerfile: Dockerfile
