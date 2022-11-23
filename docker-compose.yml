@@ -1,0 +1,5 @@
+services:
+  talanakombat:
+    build: 
+      context: .
+      dockerfile: Dockerfile
