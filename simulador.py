@@ -1,3 +1,4 @@
+import time
 import Archivos.combinaciones as combinaciones
 import Archivos.movimientos as movimientos
 import Archivos.golpes as golpes
@@ -128,6 +129,7 @@ def simular_combate(p1,p2):
             break
 
         contador+= 1
+        time.sleep(3)
 
 
 
