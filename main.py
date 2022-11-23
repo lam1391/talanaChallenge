@@ -4,6 +4,7 @@ from players import Player
 
 import validar_reglas
 import simulador
+import banner
 
 
 player1:Player = None
@@ -53,7 +54,7 @@ def run():
     except ValueError as error:
         print(error)
     else:
-
+        banner.print_banner()
         if carga_inicial == True:
             player_inicial = validar_reglas.inicio_pelea(player1,player2)
            
