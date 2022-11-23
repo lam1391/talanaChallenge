@@ -1,8 +1,9 @@
 services:
-  lam1391/talanakombat:
+  talanakombat:
+    image: lam1391/talanakombat:latest
+    container_name: talanakombat
     build: 
       context: .
       dockerfile: Dockerfile
     volumes:
       - .:/talanakombat
-
