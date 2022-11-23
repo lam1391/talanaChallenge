@@ -79,23 +79,38 @@ def simular_combate(p1,p2):
 
     secuencia_p1 = get_secuencia_pelea(p1)
     secuencia_p2 = get_secuencia_pelea(p2)
+    contador = 0
 
     while p1.puntos_de_vida >0 and p2.puntos_de_vida >0:
-        for a,b in zip(secuencia_p1,secuencia_p2):
 
-            p2.puntos_de_vida -= a["Energia"]
-            print(a["Narracion"])
+        if contador < len(secuencia_p1): 
+            p2.puntos_de_vida -= secuencia_p1[contador]["Energia"]
+            print(secuencia_p1[contador]["Narracion"])
+        else:
+            print(p1.nombre + "no hace nada")
 
-            if p2.puntos_de_vida > 0:
-                
-                p1.puntos_de_vida -= b["Energia"]
-                print(b["Narracion"])
-                
-                if p1.puntos_de_vida <= 0:
-                    print(p2.nombre + f" gana la pelea y aun le queda {p2.puntos_de_vida} puntos de vida")
+        if p2.puntos_de_vida > 0:
 
+            if contador < len(secuencia_p2):
+                p1.puntos_de_vida -= secuencia_p2[contador]["Energia"]
+                print(secuencia_p2[contador]["Narracion"])
             else:
-                print(p1.nombre + f" gana la pelea y aun le queda {p1.puntos_de_vida} puntos de vida")
+                print(p2.nombre + "no hace nada")
+
+            
+            if p1.puntos_de_vida <= 0:
+                print(p2.nombre + f" gana la pelea y aun le queda {p2.puntos_de_vida} puntos de vida")
+                break
+
+        else:
+            print(p1.nombre + f" gana la pelea y aun le queda {p1.puntos_de_vida} puntos de vida")
+            break
+
+        if contador > len(secuencia_p1) and contador> len(secuencia_p2):
+            print("Empate entre "+ p1.nombre +" y "+ p2.nombre)
+            break
+
+        contador+= 1
 
 
 

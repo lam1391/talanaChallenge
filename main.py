@@ -56,7 +56,7 @@ def run():
             if player_inicial == "player1":
                 simulador.simular_combate(player1,player2)
             else:
-                simulador.simular_combate(player2,player2)
+                simulador.simular_combate(player2,player1)
   
         else:
             print("la carga inicial de parametros de juego no pudo realizarse de forma correcta favor volver a intentar")
