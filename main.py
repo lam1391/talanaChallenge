@@ -54,8 +54,9 @@ def run():
     except ValueError as error:
         print(error)
     else:
-        banner.print_banner()
+        
         if carga_inicial == True:
+            banner.print_banner()
             player_inicial = validar_reglas.inicio_pelea(player1,player2)
            
             if player_inicial == "player1":
